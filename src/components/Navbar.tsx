@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className={`hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-colors cursor-pointer ${
                 syncConfig.spreadsheetId
                   ? 'bg-emerald-950/50 text-emerald-300 border-emerald-700 hover:bg-emerald-900/60'
-                  : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-750 hover:text-white'
+                  : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700 hover:text-white'
               }`}
             >
               <FileSpreadsheet className="w-4 h-4 text-emerald-400" />
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onOpenCryptoModal}
               title="Criptografia de Ponta a Ponta Ativa (SHA-256)"
-              className="hidden md:flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-teal-300 border border-slate-700 hover:bg-slate-750 transition-colors cursor-pointer"
+              className="hidden md:flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-teal-300 border border-slate-700 hover:bg-slate-700 transition-colors cursor-pointer"
             >
               <ShieldCheck className="w-4 h-4 text-teal-400" />
               <span className="text-xs">SHA-256</span>

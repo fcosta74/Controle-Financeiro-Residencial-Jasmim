@@ -64,7 +64,7 @@ export const CondoUnitsModal: React.FC<CondoUnitsModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/75 backdrop-blur-xs overflow-y-auto">
-      <div className="relative w-full max-w-3xl bg-white dark:bg-slate-850 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden my-4 sm:my-8 max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-3xl bg-slate-900 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden my-4 sm:my-8 max-h-[92vh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shrink-0">
           <div className="flex items-center gap-2.5">
@@ -133,8 +133,8 @@ export const CondoUnitsModal: React.FC<CondoUnitsModalProps> = ({
                 onClick={() => setSelectedFloor('all')}
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap cursor-pointer ${
                   selectedFloor === 'all'
-                    ? 'bg-white dark:bg-slate-750 text-slate-900 dark:text-white shadow-xs'
-                    : 'text-slate-500 hover:text-slate-900'
+                    ? 'bg-slate-800 text-white shadow-xs'
+                    : 'text-slate-400 hover:text-white'
                 }`}
               >
                 Todos (14)

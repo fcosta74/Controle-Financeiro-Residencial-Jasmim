@@ -139,7 +139,7 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/75 backdrop-blur-xs overflow-y-auto">
       <div className="relative w-full max-w-lg bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden my-auto max-h-[92vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-850 shrink-0">
+        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-700 bg-slate-900 shrink-0">
           <div className="flex items-center gap-2">
             <div
               className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
@@ -314,7 +314,7 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
               Situação do Pagamento
             </label>
             <div className="flex gap-2">
-              <label className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-750">
+              <label className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700">
                 <input
                   type="radio"
                   name="tx-status"
@@ -325,7 +325,7 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
                 />
                 <span className="text-emerald-600 dark:text-emerald-400">Liquidado / Pago</span>
               </label>
-              <label className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-750">
+              <label className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700">
                 <input
                   type="radio"
                   name="tx-status"
@@ -336,7 +336,7 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
                 />
                 <span className="text-amber-600 dark:text-amber-400">Pendente</span>
               </label>
-              <label className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-750">
+              <label className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700">
                 <input
                   type="radio"
                   name="tx-status"

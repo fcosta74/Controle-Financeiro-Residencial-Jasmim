@@ -438,7 +438,7 @@ export default function App() {
   const unreadNotifsCount = notifications.filter((n) => !n.read).length;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
       {/* Top Navbar */}
       <Navbar
         currentRole={currentRole}
@@ -467,14 +467,14 @@ export default function App() {
 
       {/* Navigation Tabs (Mobile & Desktop View Switcher) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-4">
-        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-2">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveTab('dashboard')}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'dashboard'
-                  ? 'bg-slate-900 text-white dark:bg-slate-800 shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-slate-800 text-white shadow-sm ring-1 ring-slate-700'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
               <LayoutDashboard className="w-4 h-4 text-emerald-400" />
@@ -484,8 +484,8 @@ export default function App() {
               onClick={() => setActiveTab('transactions')}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'transactions'
-                  ? 'bg-slate-900 text-white dark:bg-slate-800 shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-slate-800 text-white shadow-sm ring-1 ring-slate-700'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
               <ListFilter className="w-4 h-4 text-teal-400" />
@@ -493,8 +493,8 @@ export default function App() {
             </button>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-500">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-400 font-semibold">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Atualização em Tempo Real</span>
           </div>
         </div>

@@ -76,16 +76,16 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
   });
 
   return (
-    <div className="bg-white dark:bg-slate-800/90 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm overflow-hidden">
+    <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl overflow-hidden">
       {/* Header & Filters */}
-      <div className="p-5 border-b border-slate-100 dark:border-slate-700 space-y-4">
+      <div className="p-5 border-b border-slate-700 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <FileText className="w-5 h-5 text-emerald-500" />
+            <h2 className="text-lg font-extrabold text-white flex items-center gap-2">
+              <FileText className="w-5 h-5 text-emerald-400" />
               Livro-Caixa e Lançamentos em Tempo Real
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
+            <p className="text-xs text-slate-300 font-medium">
               {filtered.length} registro(s) encontrado(s) • Totalmente auditável
             </p>
           </div>
@@ -93,10 +93,10 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={onExportCSV}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-650 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-700 text-white hover:bg-slate-600 transition-colors cursor-pointer"
               title="Baixar planilha CSV local para conferência offline"
             >
-              <Download className="w-3.5 h-3.5 text-slate-500" />
+              <Download className="w-3.5 h-3.5 text-slate-300" />
               <span>Exportar CSV</span>
             </button>
           </div>
@@ -112,38 +112,38 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
               placeholder="Buscar favorecido, descrição, categoria..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs font-semibold text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
           {/* Type Filter */}
-          <div className="flex items-center bg-slate-100 dark:bg-slate-900/60 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+          <div className="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700">
             <button
               onClick={() => setTypeFilter('all')}
-              className={`flex-1 py-1 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`flex-1 py-1 text-xs font-bold rounded-lg transition-colors cursor-pointer ${
                 typeFilter === 'all'
-                  ? 'bg-white dark:bg-slate-750 text-slate-900 dark:text-white shadow-xs font-bold'
-                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900'
+                  ? 'bg-slate-800 text-white shadow-sm ring-1 ring-slate-600'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
               Todos
             </button>
             <button
               onClick={() => setTypeFilter('receita')}
-              className={`flex-1 py-1 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`flex-1 py-1 text-xs font-bold rounded-lg transition-colors cursor-pointer ${
                 typeFilter === 'receita'
-                  ? 'bg-emerald-500 text-white shadow-xs font-bold'
-                  : 'text-slate-500 dark:text-slate-400 hover:text-emerald-500'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'text-slate-400 hover:text-emerald-400'
               }`}
             >
               Receitas
             </button>
             <button
               onClick={() => setTypeFilter('despesa')}
-              className={`flex-1 py-1 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`flex-1 py-1 text-xs font-bold rounded-lg transition-colors cursor-pointer ${
                 typeFilter === 'despesa'
-                  ? 'bg-rose-500 text-white shadow-xs font-bold'
-                  : 'text-slate-500 dark:text-slate-400 hover:text-rose-500'
+                  ? 'bg-rose-600 text-white shadow-sm'
+                  : 'text-slate-400 hover:text-rose-400'
               }`}
             >
               Despesas
@@ -154,7 +154,7 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+            className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
           >
             <option value="all">Status: Todos</option>
             <option value="pago">Status: Pago / Concluído</option>
@@ -166,7 +166,7 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
           <select
             value={auditFilter}
             onChange={(e) => setAuditFilter(e.target.value)}
-            className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+            className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
           >
             <option value="all">Auditoria: Todas</option>
             <option value="verified">Auditados pelo Conselho ✓</option>
@@ -183,22 +183,22 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
           <p className="text-xs mt-1 text-slate-400">Tente ajustar os filtros ou a busca acima.</p>
         </div>
       ) : (
-        <div className="divide-y divide-slate-100 dark:divide-slate-700/60">
+        <div className="divide-y divide-slate-700">
           {filtered.map((tx) => {
             const isIncome = tx.type === 'receita';
 
             return (
               <div
                 key={tx.id}
-                className="p-4 sm:px-6 hover:bg-slate-50/80 dark:hover:bg-slate-750/50 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
+                className="p-4 sm:px-6 hover:bg-slate-700/40 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
               >
                 {/* Left details */}
                 <div className="flex items-start gap-3.5 flex-1 min-w-0">
                   <div
                     className={`mt-0.5 w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
                       isIncome
-                        ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800'
-                        : 'bg-rose-50 text-rose-600 dark:bg-rose-950/60 dark:text-rose-400 border border-rose-200 dark:border-rose-800'
+                        ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-700'
+                        : 'bg-rose-950/80 text-rose-300 border border-rose-700'
                     }`}
                   >
                     {isIncome ? <ArrowUpRight className="w-5 h-5" /> : <ArrowDownRight className="w-5 h-5" />}
@@ -206,29 +206,29 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
 
                   <div className="space-y-1 min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-bold text-sm text-slate-900 dark:text-white truncate">
+                      <span className="font-extrabold text-sm sm:text-base text-white truncate">
                         {tx.description}
                       </span>
                       <span
-                        className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                        className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${
                           isIncome
-                            ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300'
-                            : 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300'
+                            ? 'bg-emerald-950 text-emerald-300 border border-emerald-700'
+                            : 'bg-rose-950 text-rose-300 border border-rose-700'
                         }`}
                       >
                         {tx.category}
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-300 font-medium">
                       <span>Data: {formatDate(tx.date)}</span>
                       <span>•</span>
-                      <span className="flex items-center gap-1 font-medium text-slate-700 dark:text-slate-300">
+                      <span className="flex items-center gap-1 font-bold text-white">
                         <Building className="w-3.5 h-3.5 text-slate-400" />
                         {tx.recipientOrUnit}
                       </span>
                       <span>•</span>
-                      <span className="uppercase text-[10px] bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300">
+                      <span className="uppercase text-[10px] bg-slate-900 border border-slate-700 px-2 py-0.5 rounded font-bold text-slate-200">
                         {tx.paymentMethod}
                       </span>
                     </div>
@@ -236,7 +236,7 @@ export const TransactionsList: React.FC<TransactionsListProps> = ({
                 </div>
 
                 {/* Right Value, Security Stamp & Actions */}
-                <div className="flex items-center justify-between md:justify-end gap-3 sm:gap-4 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-700/50">
+                <div className="flex items-center justify-between md:justify-end gap-3 sm:gap-4 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-slate-700">
                   {/* Amount */}
                   <div className="text-right">
                     <div

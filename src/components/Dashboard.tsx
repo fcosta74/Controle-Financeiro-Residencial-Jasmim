@@ -231,41 +231,41 @@ export const Dashboard: React.FC<DashboardProps> = ({
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Total General Balance */}
-        <div className="bg-white dark:bg-slate-800/90 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-slate-800 border border-slate-700 p-5 rounded-2xl shadow-lg hover:border-slate-600 transition-all">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
               Saldo Geral Disponível
             </span>
-            <div className="w-9 h-9 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-teal-950/80 text-teal-300 border border-teal-700 flex items-center justify-center">
               <Wallet className="w-5 h-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl font-bold text-slate-900 dark:text-white">
+            <div className="text-2xl font-black text-white">
               {formatBRL(totalBalanceAll)}
             </div>
-            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-300 font-medium">
               <span>Conta Corrente Itaú + Caixa</span>
             </div>
           </div>
         </div>
 
         {/* Month Revenues */}
-        <div className="bg-white dark:bg-slate-800/90 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-slate-800 border border-slate-700 p-5 rounded-2xl shadow-lg hover:border-slate-600 transition-all">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
               Receitas do Mês
             </span>
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-emerald-950/80 text-emerald-300 border border-emerald-700 flex items-center justify-center">
               <ArrowUpRight className="w-5 h-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+            <div className="text-2xl font-black text-emerald-400">
               {formatBRL(monthIncome)}
             </div>
-            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-500 dark:text-slate-400">
-              <span className="font-medium text-emerald-600 dark:text-emerald-400">
+            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-300 font-medium">
+              <span className="font-bold text-emerald-300">
                 {monthTransactions.filter((t) => t.type === 'receita').length} entradas
               </span>
               <span>nesta competência</span>
@@ -274,21 +274,21 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
         {/* Month Expenses */}
-        <div className="bg-white dark:bg-slate-800/90 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-slate-800 border border-slate-700 p-5 rounded-2xl shadow-lg hover:border-slate-600 transition-all">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
               Despesas do Mês
             </span>
-            <div className="w-9 h-9 rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-rose-950/80 text-rose-300 border border-rose-700 flex items-center justify-center">
               <ArrowDownRight className="w-5 h-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl font-bold text-rose-600 dark:text-rose-400">
+            <div className="text-2xl font-black text-rose-400">
               {formatBRL(monthExpense)}
             </div>
-            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-500 dark:text-slate-400">
-              <span className="font-medium text-rose-600 dark:text-rose-400">
+            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-300 font-medium">
+              <span className="font-bold text-rose-300">
                 {monthTransactions.filter((t) => t.type === 'despesa').length} pagamentos
               </span>
               <span>realizados</span>
@@ -297,21 +297,21 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
         {/* Fundo de Reserva */}
-        <div className="bg-white dark:bg-slate-800/90 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-slate-800 border border-slate-700 p-5 rounded-2xl shadow-lg hover:border-slate-600 transition-all">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
               Fundo de Reserva
             </span>
-            <div className="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-amber-950/80 text-amber-300 border border-amber-700 flex items-center justify-center">
               <PiggyBank className="w-5 h-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
+            <div className="text-2xl font-black text-amber-400">
               {formatBRL(reserveFundTotal)}
             </div>
-            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-500 dark:text-slate-400">
-              <span>Poupança vinculada Caixa</span>
+            <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-300 font-medium">
+              <span>Poupança vinculada Itaú</span>
             </div>
           </div>
         </div>
@@ -320,31 +320,31 @@ export const Dashboard: React.FC<DashboardProps> = ({
       {/* Main Charts & Visual Breakdown Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Month Evolution Comparison Chart (2 cols) */}
-        <div className="lg:col-span-2 bg-white dark:bg-slate-800/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-700">
+        <div className="lg:col-span-2 bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-700">
             <div>
-              <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-emerald-500" />
+              <h2 className="text-base font-extrabold text-white flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-emerald-400" />
                 Evolução Mensal: Receitas vs Despesas
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-300 font-medium">
                 Comparativo mês a mês do condomínio e saldo operacional líquido
               </p>
             </div>
-            <div className="flex items-center gap-4 text-xs font-medium">
+            <div className="flex items-center gap-4 text-xs font-bold">
               <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded bg-emerald-500 inline-block" />
-                <span className="text-slate-600 dark:text-slate-300">Receitas</span>
+                <span className="text-slate-200">Receitas</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded bg-rose-500 inline-block" />
-                <span className="text-slate-600 dark:text-slate-300">Despesas</span>
+                <span className="text-slate-200">Despesas</span>
               </div>
             </div>
           </div>
 
           {/* Interactive Responsive SVG / Bars Chart */}
-          <div className="mt-6 space-y-5">
+          <div className="mt-6 space-y-4">
             {monthlyBalances.map((m) => {
               const maxVal = Math.max(
                 ...monthlyBalances.map((b) => Math.max(b.income, b.expense)),
@@ -358,24 +358,24 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div
                   key={m.monthKey}
                   onClick={() => onChangeMonth(m.monthKey)}
-                  className={`p-3 rounded-xl transition-all cursor-pointer ${
+                  className={`p-3.5 rounded-xl transition-all cursor-pointer ${
                     isSelected
-                      ? 'bg-slate-50 dark:bg-slate-750 border border-emerald-500/50 shadow-sm ring-1 ring-emerald-500/30'
-                      : 'hover:bg-slate-50/60 dark:hover:bg-slate-700/40 border border-transparent'
+                      ? 'bg-slate-900 border-2 border-emerald-500 shadow-md ring-1 ring-emerald-500/30'
+                      : 'bg-slate-900/60 hover:bg-slate-900/90 border border-slate-700/60'
                   }`}
                 >
-                  <div className="flex items-center justify-between text-xs font-semibold mb-2">
-                    <span className="text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <div className="flex items-center justify-between text-xs font-bold mb-2">
+                    <span className="text-white flex items-center gap-2 font-extrabold text-sm">
                       {m.month}
                       {isSelected && (
-                        <span className="text-[10px] bg-emerald-500 text-white px-1.5 py-0.2 rounded font-bold">
+                        <span className="text-[10px] bg-emerald-500 text-slate-950 px-2 py-0.5 rounded-full font-black tracking-wide uppercase">
                           Ativo
                         </span>
                       )}
                     </span>
                     <span
-                      className={`font-bold ${
-                        m.balance >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'
+                      className={`text-sm font-black ${
+                        m.balance >= 0 ? 'text-emerald-400' : 'text-rose-400'
                       }`}
                     >
                       Saldo: {m.balance >= 0 ? '+' : ''}
@@ -384,13 +384,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   </div>
 
                   {/* Dual Bar Comparison */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
                     {/* Income Bar */}
-                    <div className="flex items-center gap-2">
-                      <span className="w-14 text-[11px] text-slate-500 dark:text-slate-400 text-right">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-20 text-xs font-extrabold text-emerald-400 text-right shrink-0">
                         {formatBRL(m.income)}
                       </span>
-                      <div className="flex-1 bg-slate-100 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                      <div className="flex-1 bg-slate-950 border border-slate-700/80 h-3 rounded-full overflow-hidden">
                         <div
                           className="bg-emerald-500 h-full rounded-full transition-all duration-500"
                           style={{ width: `${incomePercent}%` }}
@@ -399,11 +399,11 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     </div>
 
                     {/* Expense Bar */}
-                    <div className="flex items-center gap-2">
-                      <span className="w-14 text-[11px] text-slate-500 dark:text-slate-400 text-right">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-20 text-xs font-extrabold text-rose-400 text-right shrink-0">
                         {formatBRL(m.expense)}
                       </span>
-                      <div className="flex-1 bg-slate-100 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                      <div className="flex-1 bg-slate-950 border border-slate-700/80 h-3 rounded-full overflow-hidden">
                         <div
                           className="bg-rose-500 h-full rounded-full transition-all duration-500"
                           style={{ width: `${expensePercent}%` }}
@@ -416,20 +416,24 @@ export const Dashboard: React.FC<DashboardProps> = ({
             })}
           </div>
 
-          {/* Monthly Superávit banner */}
-          <div className="mt-5 p-4 rounded-xl bg-slate-50 dark:bg-slate-750/70 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+          {/* Monthly Superávit/Déficit banner (High Contrast) */}
+          <div className="mt-5 p-4 rounded-xl bg-slate-900 border-2 border-slate-700 flex items-center justify-between shadow-lg">
             <div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Resultado Operacional do Mês Selecionado</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-white">
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                Resultado Operacional do Mês Selecionado
+              </div>
+              <div className="text-xl font-black text-white mt-0.5">
                 {monthNet >= 0 ? 'Superávit de ' : 'Déficit de '}
-                <span className={monthNet >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}>
+                <span className={monthNet >= 0 ? 'text-emerald-400 font-black' : 'text-rose-400 font-black'}>
                   {formatBRL(Math.abs(monthNet))}
                 </span>
               </div>
             </div>
             <div className="text-right">
-              <div className="text-xs text-slate-500 dark:text-slate-400">Cotas Arrecadadas</div>
-              <div className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                Cotas Arrecadadas
+              </div>
+              <div className="text-base font-black text-white mt-0.5">
                 {paidUnits} de {totalUnits} apartamentos
               </div>
             </div>
@@ -437,14 +441,14 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
         {/* Top Expense Categories Breakdown (1 col) */}
-        <div className="bg-white dark:bg-slate-800/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm flex flex-col justify-between">
+        <div className="bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-xl flex flex-col justify-between">
           <div>
-            <div className="pb-4 border-b border-slate-100 dark:border-slate-700">
-              <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <TrendingDown className="w-5 h-5 text-rose-500" />
+            <div className="pb-4 border-b border-slate-700">
+              <h2 className="text-base font-extrabold text-white flex items-center gap-2">
+                <TrendingDown className="w-5 h-5 text-rose-400" />
                 Maiores Despesas Prediais
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-300 font-medium">
                 Principais centros de custo do Residencial Jasmim
               </p>
             </div>
@@ -463,16 +467,16 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
                 return (
                   <div key={category} className="space-y-1.5">
-                    <div className="flex items-center justify-between text-xs font-semibold">
-                      <span className="text-slate-700 dark:text-slate-300 truncate max-w-[170px]" title={category}>
+                    <div className="flex items-center justify-between text-xs font-bold">
+                      <span className="text-slate-100 truncate max-w-[170px]" title={category}>
                         {category}
                       </span>
                       <div className="flex items-center gap-2 text-right">
-                        <span className="text-slate-900 dark:text-white">{formatBRL(amount)}</span>
-                        <span className="text-[11px] font-bold text-slate-500 w-8">{pct}%</span>
+                        <span className="text-white font-extrabold">{formatBRL(amount)}</span>
+                        <span className="text-[11px] font-black text-slate-300 w-8">{pct}%</span>
                       </div>
                     </div>
-                    <div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-950 border border-slate-700/80 h-2.5 rounded-full overflow-hidden">
                       <div
                         className={`${barColor} h-full rounded-full transition-all duration-500`}
                         style={{ width: `${pct}%` }}
@@ -485,28 +489,28 @@ export const Dashboard: React.FC<DashboardProps> = ({
           </div>
 
           {/* Quick Units Status Widget */}
-          <div className="mt-6 pt-5 border-t border-slate-100 dark:border-slate-700">
+          <div className="mt-6 pt-5 border-t border-slate-700">
             <div className="flex items-center justify-between text-xs mb-2">
-              <span className="font-semibold text-slate-700 dark:text-slate-300">Status dos 14 Apartamentos (103 a 504)</span>
+              <span className="font-bold text-slate-200">Status dos 14 Apartamentos (103 a 504)</span>
               <button
                 onClick={onOpenUnitsModal}
-                className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline cursor-pointer"
+                className="text-emerald-400 font-extrabold hover:underline cursor-pointer"
               >
                 Ver todos ↗
               </button>
             </div>
             <div className="grid grid-cols-3 gap-2 text-center">
-              <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/40">
-                <div className="text-base font-bold text-emerald-600 dark:text-emerald-400">{paidUnits}</div>
-                <div className="text-[10px] text-slate-500 dark:text-slate-400">Em dia</div>
+              <div className="p-2.5 rounded-xl bg-emerald-950/80 border border-emerald-700/80">
+                <div className="text-base font-black text-emerald-400">{paidUnits}</div>
+                <div className="text-[10px] text-emerald-200 font-bold uppercase">Em dia</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/40">
-                <div className="text-base font-bold text-amber-600 dark:text-amber-400">{pendingUnits}</div>
-                <div className="text-[10px] text-slate-500 dark:text-slate-400">Pendente</div>
+              <div className="p-2.5 rounded-xl bg-amber-950/80 border border-amber-700/80">
+                <div className="text-base font-black text-amber-400">{pendingUnits}</div>
+                <div className="text-[10px] text-amber-200 font-bold uppercase">Pendente</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/40">
-                <div className="text-base font-bold text-rose-600 dark:text-rose-400">{delinquentUnits}</div>
-                <div className="text-[10px] text-slate-500 dark:text-slate-400">Em atraso</div>
+              <div className="p-2.5 rounded-xl bg-rose-950/80 border border-rose-700/80">
+                <div className="text-base font-black text-rose-400">{delinquentUnits}</div>
+                <div className="text-[10px] text-rose-200 font-bold uppercase">Em atraso</div>
               </div>
             </div>
           </div>
