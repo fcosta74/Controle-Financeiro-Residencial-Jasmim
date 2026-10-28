@@ -12,6 +12,7 @@ import {
   User,
 } from 'lucide-react';
 import { CondoUnit, UserRole } from '../types';
+import buildingLogo from '../assets/images/jasmim_building_logo_1793191822353.jpg';
 
 interface CondoUnitsModalProps {
   isOpen: boolean;
@@ -67,8 +68,12 @@ export const CondoUnitsModal: React.FC<CondoUnitsModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center border border-teal-500/20 shrink-0">
-              <Building className="w-6 h-6" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 shadow-md shrink-0">
+              <img
+                src={buildingLogo}
+                alt="Brasão Residencial Jasmim"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h2 className="font-bold text-slate-900 dark:text-white text-base">

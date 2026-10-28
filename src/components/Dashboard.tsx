@@ -15,6 +15,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { CondoUnit, MonthlyBalance, Transaction, UserRole } from '../types';
+import buildingLogo from '../assets/images/jasmim_building_logo_1793191822353.jpg';
 
 interface DashboardProps {
   currentRole: UserRole;
@@ -119,20 +120,29 @@ export const Dashboard: React.FC<DashboardProps> = ({
       {/* Top Banner & Quick Actions */}
       <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 p-6 rounded-2xl border border-slate-700/80 shadow-xl text-white">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div>
-            <div className="inline-flex flex-wrap items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-medium mb-2">
-              <CheckCircle className="w-3.5 h-3.5" />
-              <span>Residencial Jasmim • 14 Unidades</span>
-              <span className="text-slate-400">•</span>
-              <span className="text-amber-300 font-semibold">Banco Itaú</span>
+          <div className="flex items-start gap-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-slate-800 border-2 border-emerald-500/40 shadow-xl shrink-0">
+              <img
+                src={buildingLogo}
+                alt="Brasão Residencial Jasmim"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              Painel Financeiro & Demonstrativo
-            </h1>
-            <p className="text-slate-300 text-sm mt-1 max-w-2xl">
-              Controle em tempo real de receitas, despesas (Embasa, Coelba, manutenções) e fundo de reserva,
-              com sincronização no Google Drive.
-            </p>
+            <div>
+              <div className="inline-flex flex-wrap items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-medium mb-2">
+                <CheckCircle className="w-3.5 h-3.5" />
+                <span>Residencial Jasmim • 14 Unidades</span>
+                <span className="text-slate-400">•</span>
+                <span className="text-amber-300 font-semibold">Banco Itaú</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                Painel Financeiro & Demonstrativo
+              </h1>
+              <p className="text-slate-300 text-sm mt-1 max-w-2xl">
+                Controle em tempo real de receitas, despesas (Embasa, Coelba, manutenções) e fundo de reserva,
+                com sincronização no Google Drive.
+              </p>
+            </div>
           </div>
 
           {/* Quick Actions (Síndico / Conselho) */}

@@ -13,6 +13,7 @@ import {
   VolumeX,
 } from 'lucide-react';
 import { UserRole, GoogleSheetsSyncConfig } from '../types';
+import buildingLogo from '../assets/images/jasmim_building_logo_1793191822353.jpg';
 
 interface NavbarProps {
   currentRole: UserRole;
@@ -65,8 +66,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between h-16">
           {/* Logo & Condo Title */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-emerald-900/30">
-              <Building2 className="w-6 h-6" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 shadow-md shrink-0 flex items-center justify-center">
+              <img
+                src={buildingLogo}
+                alt="Logo Residencial Jasmim"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
