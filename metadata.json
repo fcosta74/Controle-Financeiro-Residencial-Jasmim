@@ -1,0 +1,7 @@
+{
+  "name": "Controle Financeiro - Residencial Jasmim",
+  "description": "Aplicativo de gestão e controle financeiro em tempo real para o condomínio Residencial Jasmim com dashboard gráfico de saldo mensal e anual, controle de acesso e sincronização com Google Planilhas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
