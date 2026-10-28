@@ -37,6 +37,7 @@ import { GoogleSheetsSyncModal } from './components/GoogleSheetsSyncModal';
 import { CondoUnitsModal } from './components/CondoUnitsModal';
 import { AuditCryptoModal } from './components/AuditCryptoModal';
 import { NotificationsDrawer } from './components/NotificationsDrawer';
+import { UserManualModal } from './components/UserManualModal';
 import {
   googleSignIn,
   initAuth,
@@ -143,6 +144,7 @@ export default function App() {
   const [isCryptoModalOpen, setIsCryptoModalOpen] = useState(false);
   const [cryptoInspectorTx, setCryptoInspectorTx] = useState<Transaction | null>(null);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const [isManualOpen, setIsManualOpen] = useState(false);
 
   // Quick Toast message
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -435,6 +437,13 @@ export default function App() {
     showToast(`Baixa da cota do Apt ${unit.unitNumber} realizada com sucesso!`);
   };
 
+  const handleUpdateUnit = (updatedUnit: CondoUnit) => {
+    setCondoUnits((prev) =>
+      prev.map((u) => (u.id === updatedUnit.id ? updatedUnit : u))
+    );
+    showToast(`Apartamento ${updatedUnit.unitNumber} (${updatedUnit.residentName}) atualizado com sucesso!`);
+  };
+
   const unreadNotifsCount = notifications.filter((n) => !n.read).length;
 
   return (
@@ -450,6 +459,7 @@ export default function App() {
           setIsCryptoModalOpen(true);
         }}
         onOpenNotifications={() => setIsNotificationsOpen(true)}
+        onOpenManual={() => setIsManualOpen(true)}
         unreadNotificationsCount={unreadNotifsCount}
         soundEnabled={soundEnabled}
         onToggleSound={() => setSoundEnabled(!soundEnabled)}
@@ -521,6 +531,7 @@ export default function App() {
               setCryptoInspectorTx(null);
               setIsCryptoModalOpen(true);
             }}
+            onOpenManual={() => setIsManualOpen(true)}
           />
         ) : (
           <TransactionsList
@@ -628,6 +639,12 @@ export default function App() {
         units={condoUnits}
         currentRole={currentRole}
         onRegisterUnitPayment={handleRegisterUnitPayment}
+        onUpdateUnit={handleUpdateUnit}
+      />
+
+      <UserManualModal
+        isOpen={isManualOpen}
+        onClose={() => setIsManualOpen(false)}
       />
 
       <AuditCryptoModal

@@ -11,6 +11,7 @@ import {
   ChevronDown,
   Volume2,
   VolumeX,
+  BookOpen,
 } from 'lucide-react';
 import { UserRole, GoogleSheetsSyncConfig } from '../types';
 import buildingLogo from '../assets/images/jasmim_building_logo_1793191822353.jpg';
@@ -22,6 +23,7 @@ interface NavbarProps {
   onOpenSyncModal: () => void;
   onOpenCryptoModal: () => void;
   onOpenNotifications: () => void;
+  onOpenManual: () => void;
   unreadNotificationsCount: number;
   soundEnabled: boolean;
   onToggleSound: () => void;
@@ -36,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenSyncModal,
   onOpenCryptoModal,
   onOpenNotifications,
+  onOpenManual,
   unreadNotificationsCount,
   soundEnabled,
   onToggleSound,
@@ -86,6 +89,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Center / Right utilities */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* User Manual Button */}
+            <button
+              onClick={onOpenManual}
+              title="Manual de Utilização do Residencial Jasmim"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-950/60 text-emerald-300 border border-emerald-700/70 hover:bg-emerald-900 hover:text-white transition-colors cursor-pointer"
+            >
+              <BookOpen className="w-4 h-4 text-emerald-400" />
+              <span className="hidden sm:inline">Manual</span>
+            </button>
+
             {/* Google Sheets Sync Pill (Desktop/Tablet) */}
             <button
               onClick={onOpenSyncModal}

@@ -13,6 +13,7 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   CheckCircle,
+  BookOpen,
 } from 'lucide-react';
 import { CondoUnit, MonthlyBalance, Transaction, UserRole } from '../types';
 import buildingLogo from '../assets/images/jasmim_building_logo_1793191822353.jpg';
@@ -28,6 +29,7 @@ interface DashboardProps {
   onOpenSyncModal: () => void;
   onOpenUnitsModal: () => void;
   onOpenCryptoModal: () => void;
+  onOpenManual?: () => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
@@ -41,6 +43,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onOpenSyncModal,
   onOpenUnitsModal,
   onOpenCryptoModal,
+  onOpenManual,
 }) => {
   // Format currency BRL
   const formatBRL = (val: number) => {
@@ -191,6 +194,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <Users className="w-4 h-4 text-teal-400" />
               <span>14 Aptos</span>
             </button>
+
+            {onOpenManual && (
+              <button
+                onClick={onOpenManual}
+                className="flex items-center gap-2 px-3.5 py-2.5 bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-700/80 rounded-xl font-medium text-sm text-emerald-300 transition-colors cursor-pointer"
+                title="Abrir Manual de Utilização"
+              >
+                <BookOpen className="w-4 h-4 text-emerald-400" />
+                <span>Manual 📖</span>
+              </button>
+            )}
           </div>
         </div>
 
